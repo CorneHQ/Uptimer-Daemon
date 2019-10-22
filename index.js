@@ -22,13 +22,13 @@ sleep(1000);
 console.log(chalk.blue(`${new Date(Date.now()).toLocaleString()} [INFO] Uptimer Daemon is started, lets do some checks!`));
 
 if(!fs.existsSync('./config/core.json')){
-    return console.log(chalk.red(`${new Date(Date.now()).toLocaleString()} [ERR] Core.json not found! Please add a core.json in the config folder!`));
+    return console.log(chalk.red(`${new Date(Date.now()).toLocaleString()} [ERR] Core.json not found! Please add a core.json in the config folder.`));
 }
 
 const stats = fs.statSync("./config/core.json");
 
 if(stats.size === 0){
-    return console.log(chalk.red(`${new Date(Date.now()).toLocaleString()} [ERR] I detected a empty core.json, please get the details from the panel!`));
+    return console.log(chalk.red(`${new Date(Date.now()).toLocaleString()} [ERR] I detected an empty core.json, please get the details from the panel.`));
 }
 
 const config = require('./config/core.json')
